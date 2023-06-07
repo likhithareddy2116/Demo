@@ -8,7 +8,7 @@ import java.util.List;
 
 public class RentalService implements RentalCostCalculator {
 
-	private List<Vehicle> vehicles = new ArrayList<>();
+	private List<Vehicle> vehicles;
 	private List<Rental> rentalss;
 
 	public RentalService() {
@@ -37,7 +37,7 @@ public class RentalService implements RentalCostCalculator {
 	}
 
 	// Rent Vechile
-	public Rental rentVechile(Customer customer, Vehicle vehicle, LocalDateTime startTime, LocalDateTime endTime) {
+	public Rental rentVehicle(Customer customer, Vehicle vehicle, LocalDateTime startTime, LocalDateTime endTime) {
 		if (vehicle.isAvailable()) {
 			Rental rental = new Rental(vehicle, customer, startTime, endTime);
 			rentalss.add(rental);

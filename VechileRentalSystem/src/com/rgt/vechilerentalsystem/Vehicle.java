@@ -37,11 +37,12 @@ public abstract class Vehicle implements VechileOperations {
 	public void setLicensePlate(String licensePlate) {
 		this.licensePlate = licensePlate;
 	}
-
+    
+	@Override
 	public boolean isAvailable() {
 		return isAvailable;
 	}
-
+    @Override
 	public void setAvailable(boolean isAvailable) {
 		this.isAvailable = isAvailable;
 	}
