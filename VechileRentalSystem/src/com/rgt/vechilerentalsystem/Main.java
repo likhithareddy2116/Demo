@@ -76,14 +76,14 @@ public class Main {
 	                vehicle = new Car(licensePlate, make, model, numDoors);
 	                break;
 	            case "motorcycle":
-	                System.out.print("Is it electric? (true/false): ");
+	                System.out.print("Enter Number of Seating: ");
 	                int numOfSeating=scanner.nextInt();
 	                vehicle = new MotorCycle(licensePlate, make, model, numOfSeating);
 	                break;
 	            case "bicycle":
-	                System.out.print("Enter the number of gears: ");
-	                int numGears = scanner.nextInt();
-	                vehicle = new Bicycle(licensePlate, make, model, numGears);
+	                System.out.print("Enter the number of breaks: ");
+	                int numOfBreaks = scanner.nextInt();
+	                vehicle = new Bicycle(licensePlate, make, model, numOfBreaks);
 	                break;
 	            default:
 	                System.out.println("Invalid vehicle type. Vehicle not added.");
