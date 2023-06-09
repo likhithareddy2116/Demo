@@ -16,7 +16,7 @@ public class AtmWithAccounts {
 			System.out.println("1. Create Account");
 			System.out.println("2. Login");
 			System.out.println("3. Exit");
-			System.out.print("Choose an option: ");
+			System.out.println("Choose an option: ");
 			choice = scanner.nextInt();
 
 			switch (choice) {
@@ -26,11 +26,11 @@ public class AtmWithAccounts {
 					break;
 				}
 
-				System.out.print("Enter account number: ");
+				System.out.println("Enter account number: ");
 				int accountNumber = scanner.nextInt();
-				System.out.print("Enter PIN: ");
+				System.out.println("Enter PIN: ");
 				int pin = scanner.nextInt();
-				System.out.print("Enter initial balance: ");
+				System.out.println("Enter initial balance: ");
 				double balance = scanner.nextDouble();
 
 				accounts[accountCount] = new Account(accountNumber, pin, balance);
@@ -39,9 +39,9 @@ public class AtmWithAccounts {
 				break;
 
 			case 2:
-				System.out.print("Enter account number: ");
+				System.out.println("Enter account number: ");
 				int accountNumberInput = scanner.nextInt();
-				System.out.print("Enter PIN: ");
+				System.out.println("Enter PIN: ");
 				int pinNumberInput = scanner.nextInt();
 				Account currentAccount = null;
 				for (int i = 0; i < accountCount; i++) {
@@ -61,7 +61,7 @@ public class AtmWithAccounts {
 						System.out.println("2. Deposit");
 						System.out.println("3. Withdraw");
 						System.out.println("4. Exit");
-						System.out.print("Choose an option: ");
+						System.out.println("Choose an option: ");
 						choice = scanner.nextInt();
 
 						switch (choice) {

@@ -15,6 +15,10 @@ public class ATM {
 		return balance;
 	}
 
+	/**
+	 * 
+	 * deposit the money
+	 */
 	public void deposit(Account currentAccount, double amount) {
 		if (amount > 0) {
 			double balance2 = currentAccount.getBalance();
@@ -25,6 +29,10 @@ public class ATM {
 		}
 	}
 
+	/**
+	 * 
+	 * withdraw money
+	 */
 	public void withdraw(Account currentAccount, double amount) {
 		if (amount > balance) {
 			System.out.println("Insufficient balance.");
