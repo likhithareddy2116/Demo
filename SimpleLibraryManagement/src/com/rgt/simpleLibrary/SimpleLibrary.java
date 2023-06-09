@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class SimpleLibrary {
 
 	public static void main(String[] args) {
-		Book system = new Book();
+		Book book = new Book();
 		Patron parton = new Patron();
 		Scanner scanner = new Scanner(System.in);
 		Library library = new Library();
@@ -27,8 +27,8 @@ public class SimpleLibrary {
 					String title = scanner.next();
 					System.out.println("Enter Author Name:");
 					String author = scanner.next();
-					system = new Book(title, author);
-					library.addBook(system);
+					book = new Book(title, author);
+					library.addBook(book);
 					break;
 				case 2:
 					System.out.println("Enter Patron name:");

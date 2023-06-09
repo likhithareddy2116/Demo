@@ -16,6 +16,10 @@ public class Library {
 		patronsCount = 0;
 	}
 
+	/**
+	 * 
+	 * adding the Book
+	 */
 	public void addBook(Book book) {
 		if (bookCount < MAX_BOOKS) {
 			books[bookCount++] = book;
@@ -25,6 +29,10 @@ public class Library {
 		}
 	}
 
+	/**
+	 * 
+	 * Adding the patron
+	 */
 	public void addPatron(Patron patron) {
 		if (patronsCount < MAX_PATRONS) {
 			patrons[patronsCount++] = patron;
@@ -35,6 +43,11 @@ public class Library {
 
 	}
 
+	/**
+	 * 
+	 * Borrow the book based on title and name
+	 * 
+	 */
 	public void barrowBook(String names, String titles) {
 		Book book = findBook(titles);
 		Patron patron = findPatron(names);
@@ -53,6 +66,11 @@ public class Library {
 		}
 	}
 
+	/**
+	 * 
+	 * findPatron based on name
+	 * 
+	 */
 	private Patron findPatron(String name) {
 		for (int i = 0; i < patronsCount; i++) {
 			if (patrons[i].getName().equalsIgnoreCase(name)) {
@@ -62,6 +80,11 @@ public class Library {
 		return null;
 	}
 
+	/**
+	 * 
+	 * findBook based on title
+	 * 
+	 */
 	private Book findBook(String title) {
 		for (int i = 0; i < bookCount; i++) {
 			if (books[i].getTitle().equalsIgnoreCase(title)) {
@@ -71,6 +94,11 @@ public class Library {
 		return null;
 	}
 
+	/**
+	 * 
+	 * return book from based on name and title
+	 * 
+	 */
 	public void returnBook(String namee, String title) {
 		Book book = findBook(title);
 		Patron patron = findPatron(namee);
