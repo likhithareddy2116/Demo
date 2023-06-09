@@ -25,7 +25,10 @@ public class RentalService implements RentalCostCalculator {
 		vehicles.remove(vehicle);
 	}
 
-	// Display all Vechiles
+	/**
+	 * 
+	 * fetching list of available vehicles
+	 */
 	public List<Vehicle> displayGetAvailableVehiles() {
 		List<Vehicle> listOfVechiles = new ArrayList<>();
 		for (Vehicle vehicle : vehicles) {
@@ -36,7 +39,6 @@ public class RentalService implements RentalCostCalculator {
 		return listOfVechiles;
 	}
 
-	// Rent Vechile
 	public Rental rentVehicle(Customer customer, Vehicle vehicle, LocalDateTime startTime, LocalDateTime endTime) {
 		if (vehicle.isAvailable()) {
 			Rental rental = new Rental(vehicle, customer, startTime, endTime);
@@ -49,7 +51,11 @@ public class RentalService implements RentalCostCalculator {
 
 	}
 
-	// Calculate Rental Cost
+	/**
+	 * overide method from interface
+	 * 
+	 * calculating rental cost based on the price of vehicle and num of days
+	 */
 	@Override
 	public BigDecimal calculateRentalCost(Rental rental) {
 		Duration duration = Duration.between(rental.getStartTime(), rental.getEndTime());
@@ -69,6 +75,11 @@ public class RentalService implements RentalCostCalculator {
 		}
 	}
 
+	/**
+	 * 
+	 * fetching rental by rentalId
+	 * 
+	 */
 	public Rental getRentalById(String rentalId) {
 		for (Rental rental : rentalss) {
 			if (rental.getRentalId().equals(rentalId)) {
@@ -78,6 +89,11 @@ public class RentalService implements RentalCostCalculator {
 		return null;
 	}
 
+	/**
+	 * 
+	 * fetching a vehicle based on licensePlate
+	 * 
+	 */
 	public Vehicle getVehicleByLicensePlate(String licensePlate) {
 		for (Vehicle vehicle : vehicles) {
 			if (vehicle.getLicensePlate().equals(licensePlate)) {
